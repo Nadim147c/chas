@@ -1,4 +1,4 @@
-package charset
+package chas
 
 import (
 	"bufio"
@@ -11,11 +11,6 @@ func SearchString(charset string, text string, w io.Writer) error {
 }
 
 func Search(charset string, r io.Reader, w io.Writer) error {
-	if charset == "" {
-		_, err := io.ReadAll(r)
-		return err
-	}
-
 	scanner := bufio.NewScanner(r)
 	scanner.Buffer(nil, 1024*1024*1024)
 

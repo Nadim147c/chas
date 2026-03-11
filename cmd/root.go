@@ -21,7 +21,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Nadim147c/chas/pkgs/charset"
+	"github.com/Nadim147c/chas/pkgs/chas"
 	"github.com/Nadim147c/fang"
 	"github.com/spf13/cobra"
 )
@@ -35,8 +35,7 @@ It acts as a stream filter for verifying character presence.`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		chars := strings.Join(args, "")
 		in, out := cmd.InOrStdin(), cmd.OutOrStdout()
-
-		return charset.Search(chars, in, out)
+		return chas.Search(chars, in, out)
 	},
 }
 

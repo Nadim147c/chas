@@ -1,4 +1,4 @@
-package charset
+package chas
 
 import (
 	"bytes"
